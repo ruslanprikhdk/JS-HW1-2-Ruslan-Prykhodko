@@ -6,9 +6,20 @@ var result;
 
 function pow(num, power) {
   if(num%1 == 0 && power%1 == 0) {
-    result=num;
-    for (k=1;k<power;k++) {
-    result=result*num;
+    if(power==0) {
+      result=1;
+    }
+    else if(power<0) {
+      result=num;
+      for (k=1;k<Math.abs(power);k++) {
+      result=result*num;
+      }
+      result=1/result;
+    } else {
+      result=num;  
+      for (k=1;k<power;k++) {
+      result=result*num;
+      }  
     }
   } else {
   alert('Введено не целое число');
