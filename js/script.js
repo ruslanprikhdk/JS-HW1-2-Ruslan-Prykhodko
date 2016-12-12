@@ -5,7 +5,7 @@ var k;
 var result;
 
 function pow(num, power) {
-  if(num%1 == 0 || power%1 == 0) {
+  if(num%1 == 0 && power%1 == 0) {
     result=num;
     for (k=1;k<power;k++) {
     result=result*num;
